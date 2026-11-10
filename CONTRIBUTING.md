@@ -116,6 +116,23 @@ git push origin v0.1.0
 
 推送后在仓库设置里补齐描述与 topics、启用 Discussions，并在 tag 上创建 Release。
 
+### 启用在线演示 / GitHub Pages（维护者操作一次）
+
+GitHub 不允许用 `GITHUB_TOKEN` 启用 Pages（`actions/configure-pages` 的 `enablement` 选项明确要求
+另提供 PAT），所以**首次必须在网页端做一次**：
+
+1. 打开 `https://github.com/limingwan31/testflow-studio/settings/pages`。
+2. **Build and deployment → Source** 选 `Deploy from a branch`。
+3. **Branch** 选 `main`，**Folder 必须选 `/ (root)`**，点 Save。
+   ⚠️ 仓库里已有 `docs/` 目录且存放的是文档，选 `/docs` 会让站点 404。
+4. 约 30–60 秒后访问 `https://limingwan31.github.io/testflow-studio/`。
+
+根目录的 `.nojekyll` 让 Pages 跳过 Jekyll、直接复制静态文件。启用之后每次 push 到 `main`
+都会自动重新发布，不需要额外 workflow、也不需要构建步骤。
+
+> GitHub Pages 项目页的 URL 一定带仓库名：`https://<用户名>.github.io/<仓库名>/`。
+> 只有仓库名恰好叫 `<用户名>.github.io` 时才会得到不带路径的根域名。
+
 ## 发布流程 / Releases（维护者）
 
 1. 确认 `npm run verify` 与 CI 全绿。

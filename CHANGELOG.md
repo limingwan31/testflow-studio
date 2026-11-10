@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- **Live demo on GitHub Pages**: the zero-dependency workbench is served directly from `main`
+  at `https://limingwan31.github.io/testflow-studio/`. `.nojekyll` makes Pages copy the static
+  files as-is (no Jekyll build, no bundler, no backend, no CDN). Fully client-side: language,
+  theme and run history stay in the visitor's browser.
+
 ### Planned
 
 - Real `VisaScpiAdapter` / `ModbusTcpAdapter` / `HttpAdapter` implementations

@@ -4,6 +4,7 @@
 > 一个零依赖、可直接打开的 AI 原生测试自动化工作台**原型**。
 
 [![CI](https://github.com/limingwan31/testflow-studio/actions/workflows/ci.yml/badge.svg)](https://github.com/limingwan31/testflow-studio/actions/workflows/ci.yml)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-GitHub_Pages-2ea44f.svg)](https://limingwan31.github.io/testflow-studio/)
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![Node >= 18](https://img.shields.io/badge/node-%3E%3D18-brightgreen.svg)](https://nodejs.org/)
 [![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
@@ -43,7 +44,19 @@
 
 ## 快速开始
 
-### 方式一：直接打开（推荐，零安装）
+### 方式零：在线演示（无需安装，推荐给访客）
+
+**https://limingwan31.github.io/testflow-studio/**
+
+由 GitHub Pages 静态托管，打开即用，功能与本地 `index.html` 完全一致：中英切换、深浅主题、
+工作流编辑、运行与日志、结果表格与波形、CSV / Markdown 导出、运行历史与一键复跑。
+页面是纯静态的，**没有后端、不连接任何真实仪器**；语言 / 主题偏好与运行历史只保存在浏览器
+`localStorage`，不会上传到服务器。
+
+> 若该地址暂时返回 404，说明维护者还没在仓库 Settings → Pages 启用，步骤见
+> [CONTRIBUTING.md](CONTRIBUTING.md) 的「启用在线演示」。
+
+### 方式一：直接打开（零安装，本地）
 
 双击 [`index.html`](index.html)。项目不使用 ES modules、构建工具或 CDN，浏览器直接打开即可运行。
 

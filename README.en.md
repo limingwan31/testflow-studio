@@ -4,6 +4,7 @@
 > A zero-dependency, open-in-browser **prototype** of an AI-native test automation workbench.
 
 [![CI](https://github.com/limingwan31/testflow-studio/actions/workflows/ci.yml/badge.svg)](https://github.com/limingwan31/testflow-studio/actions/workflows/ci.yml)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-GitHub_Pages-2ea44f.svg)](https://limingwan31.github.io/testflow-studio/)
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![Node >= 18](https://img.shields.io/badge/node-%3E%3D18-brightgreen.svg)](https://nodejs.org/)
 [![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
@@ -43,7 +44,20 @@ Test intent → Planner workflow JSON → Engine executes steps → Report rende
 
 ## Quick start
 
-### Option 1: just open it (zero install)
+### Option 0: live demo (no install, best for sharing)
+
+**https://limingwan31.github.io/testflow-studio/**
+
+Hosted by GitHub Pages, it is the exact same workbench as the local `index.html`: language and
+theme switches, editable workflow canvas, execution log, results table and waveform, CSV /
+Markdown export, run history and one-click rerun. It is **purely static — no backend and no
+connection to any real instrument**; language, theme and run history live only in your browser's
+`localStorage` and are never uploaded.
+
+> If this URL returns 404, the maintainer has not enabled Pages yet. See "Enable the live demo"
+> in [CONTRIBUTING.md](CONTRIBUTING.md).
+
+### Option 1: just open it (zero install, locally)
 
 Double-click [`index.html`](index.html). No ES modules, no build step, no CDN — it runs directly in the browser.
 
