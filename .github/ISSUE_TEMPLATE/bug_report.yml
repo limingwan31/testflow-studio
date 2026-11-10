@@ -1,0 +1,73 @@
+name: 缺陷报告 / Bug report
+description: 报告界面、意图解析、执行或报告导出中的异常
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢反馈！提交前请先确认：
+        - 已阅读 README 的「已知限制」章节；
+        - 本项目当前只带模拟仪器，接真机相关的问题请说明适配层改动；
+        - 请**不要**粘贴真实仪器 IP、序列号、客户数据或内部网络信息。
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: 影响范围 / Area
+      options:
+        - 界面与交互（画布、结果、波形）
+        - 多语言 / 主题
+        - 自然语言解析（中文或英文）
+        - 执行引擎与事件流
+        - 报告导出（CSV / Markdown / 打印）
+        - 驱动层与能力定义
+        - 文档或 CI
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤 / Steps to reproduce
+      description: 从打开页面开始，逐步写出操作与输入的测试意图原文
+      placeholder: |
+        1. 打开 index.html
+        2. 输入「扫 5-20 V ...」
+        3. 点击生成工作流
+        4. 点击运行
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: 期望结果 / Expected
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: 实际结果 / Actual
+      description: 可附浏览器控制台报错文本（纯文本，不要截图里的敏感信息）
+    validations:
+      required: true
+
+  - type: input
+    id: environment
+    attributes:
+      label: 环境 / Environment
+      placeholder: "Windows 11 / Chrome 131 / Node 22（如运行了 npm test）"
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: 确认 / Confirm
+      options:
+        - label: 我已移除真实仪器地址、序列号与客户数据
+          required: true
+        - label: 我已用 `node tests/smoke.js` 验证过基础功能未整体失效
+          required: false

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<!--
+  Copyright 2026 liming
+  SPDX-License-Identifier: Apache-2.0
+-->
+<html lang="zh-CN" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TestFlow Studio · AI 自动化测试平台原型</title>
+<link rel="stylesheet" href="assets/styles.css">
+<script>
+  (function () {
+    try {
+      var t = localStorage.getItem('testflow.theme');
+      var l = localStorage.getItem('testflow.lang');
+      document.documentElement.setAttribute('data-theme', t === 'light' ? 'light' : 'dark');
+      document.documentElement.setAttribute('lang', l === 'en' ? 'en' : 'zh-CN');
+    } catch (e) { /* 隐私模式下使用默认深色中文 */ }
+  })();
+</script>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <span class="logo">TF</span>
+    <div class="brand-text">
+      <strong>TestFlow Studio</strong>
+      <small data-i18n>AI 自动化测试平台 · 通用可插拔框架原型</small>
+    </div>
+  </div>
+  <div class="top-meta">
+    <span class="badge" data-i18n>模拟模式</span>
+    <span class="status-dot" id="状态灯"></span>
+    <span id="状态文本">就绪</span>
+    <span class="sep">|</span>
+    <span id="设备在线">4 / 4 在线</span>
+  </div>
+  <div class="top-actions">
+    <div class="seg" id="语言切换">
+      <button data-lang="zh" class="active">中文</button>
+      <button data-lang="en">EN</button>
+    </div>
+    <button id="主题按钮" class="btn btn-ghost btn-sm">
+      <span class="theme-icon"></span><span id="主题按钮文字">切换浅色</span>
+    </button>
+    <button id="帮助按钮" class="btn btn-ghost btn-sm" data-i18n>架构接入点</button>
+  </div>
+</header>
+
+<div class="workspace">
+
+  <aside class="col left">
+    <section class="panel">
+      <h2><span data-i18n>测试台设备</span> <span class="count" id="设备计数">6</span></h2>
+      <div id="设备列表" class="device-list"></div>
+    </section>
+    <section class="panel">
+      <h2><span data-i18n>驱动注册表</span> <span class="count" data-i18n>可插拔</span></h2>
+      <div id="驱动列表" class="driver-list"></div>
+    </section>
+    <section class="panel grow">
+      <h2><span data-i18n>运行历史</span> <span class="count" id="历史计数">0</span></h2>
+      <div id="历史列表" class="history-list scroll"></div>
+    </section>
+  </aside>
+
+  <main class="col center">
+    <section class="panel intent">
+      <h2><span data-i18n>测试意图</span> <span class="hint" data-i18n>用一句话描述，像交代给同事一样</span></h2>
+      <div class="intent-row">
+        <textarea id="意图输入" rows="2" spellcheck="false">扫 5-20 V 电源，在 CH1 捕获负载瞬态，过冲限值 200 mV，2.5 A 负载</textarea>
+        <button id="生成按钮" class="btn btn-primary" data-i18n>生成工作流</button>
+      </div>
+      <div class="chips" id="示例按钮组"></div>
+      <div class="guard-note" data-i18n>AI 只生成步骤与参数 · 限值来自用户输入并锁定 · 测量值只来自执行结果</div>
+    </section>
+
+    <section class="panel flow-panel grow">
+      <div class="panel-head">
+        <h2><span data-i18n>工作流画布</span> <span class="hint" id="步骤计数"></span></h2>
+        <div class="mini-actions">
+          <span id="修订号" class="rev">Rev A</span>
+          <button id="添加步骤按钮" class="btn btn-ghost btn-sm" data-i18n>+ 步骤</button>
+        </div>
+      </div>
+      <div class="flow-meta">
+        <span id="工作流名称">—</span>
+        <span class="lock" id="限值标签">限值锁定 · 过冲 &lt; 200 mV</span>
+      </div>
+      <div id="添加表单" class="add-form hidden"></div>
+      <div id="画布" class="canvas scroll"></div>
+    </section>
+  </main>
+
+  <aside class="col right">
+    <section class="panel run-panel">
+      <div class="run-head">
+        <button id="运行按钮" class="btn btn-primary" data-i18n>运行</button>
+        <button id="停止按钮" class="btn btn-ghost" disabled data-i18n>停止</button>
+        <span id="结论徽章" class="verdict">未运行</span>
+      </div>
+      <div class="progress"><div id="进度条"></div></div>
+      <div class="progress-text" id="进度文本">等待运行 · 4 个扫描点</div>
+    </section>
+    <div class="tabs" id="Tab按钮组">
+      <button data-tab="日志" class="tab active" data-i18n>执行日志</button>
+      <button data-tab="JSON" class="tab" data-i18n>步骤 JSON</button>
+      <button data-tab="护栏" class="tab" data-i18n>安全护栏</button>
+      <button data-tab="架构" class="tab" data-i18n>架构</button>
+    </div>
+    <section class="panel tab-panel grow">
+      <div id="Tab-日志" class="tab-body active"><div id="日志列表" class="log-list scroll"></div></div>
+      <div id="Tab-JSON" class="tab-body scroll">
+        <div class="json-note" data-i18n>工作流 JSON 字段名为稳定契约，不随界面语言变化</div>
+        <pre id="JSON视图"></pre>
+      </div>
+      <div id="Tab-护栏" class="tab-body scroll"><div id="护栏视图" class="prose"></div></div>
+      <div id="Tab-架构" class="tab-body scroll"><div id="架构视图" class="prose"></div></div>
+    </section>
+  </aside>
+
+</div>
+
+<section class="results" id="结果区">
+  <div class="results-head">
+    <h2><span data-i18n>运行结果</span> <span class="hint" id="结果说明">运行后，报告由实测数据自动生成</span></h2>
+    <div class="report-actions">
+      <button id="导出CSV" class="btn btn-ghost btn-sm" disabled data-i18n>导出 CSV</button>
+      <button id="导出MD" class="btn btn-ghost btn-sm" disabled data-i18n>导出报告 MD</button>
+      <button id="打印报告" class="btn btn-ghost btn-sm" disabled data-i18n>打印 / PDF</button>
+      <button id="复跑按钮" class="btn btn-ghost btn-sm" disabled data-i18n>一键复跑</button>
+    </div>
+  </div>
+  <div class="results-body">
+    <div class="table-wrap scroll">
+      <table id="结果表格">
+        <thead><tr>
+          <th data-i18n>点位</th><th data-i18n>设定电压</th><th data-i18n>实测电压</th>
+          <th data-i18n>过冲</th><th data-i18n>下跌</th><th data-i18n>纹波</th>
+          <th data-i18n>稳定时间</th><th data-i18n>结论</th>
+        </tr></thead>
+        <tbody><tr><td colspan="8" class="empty">尚无运行数据</td></tr></tbody>
+      </table>
+    </div>
+    <div class="chart-wrap">
+      <div class="chart-title" id="最差汇总">等待实测数据</div>
+      <div id="波形容器" class="chart-empty">捕获波形将在这里显示</div>
+    </div>
+  </div>
+</section>
+
+<script src="src/i18n.js"></script>
+<script src="src/drivers.js"></script>
+<script src="src/planner.js"></script>
+<script src="src/engine.js"></script>
+<script src="src/report.js"></script>
+<script src="src/app.js"></script>
+</body>
+</html>

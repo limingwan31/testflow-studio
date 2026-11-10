@@ -1,0 +1,36 @@
+{
+  "name": "testflow-studio",
+  "version": "0.1.0",
+  "description": "AI-native, vendor-neutral test automation workbench prototype with a pluggable driver layer",
+  "private": false,
+  "license": "Apache-2.0",
+  "type": "commonjs",
+  "scripts": {
+    "check": "node scripts/verify.js",
+    "test": "node tests/smoke.js",
+    "verify": "npm run check && npm test",
+    "serve": "node scripts/serve.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "test-automation",
+    "lab-automation",
+    "instrument-control",
+    "visa",
+    "scpi",
+    "ai-agent",
+    "workflow",
+    "opentap",
+    "hardware-testing"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lizhuanshu/testflow-studio.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lizhuanshu/testflow-studio/issues"
+  },
+  "homepage": "https://github.com/lizhuanshu/testflow-studio#readme"
+}

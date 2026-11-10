@@ -1,0 +1,23 @@
+# 仓库内统一存 LF；检出时按项目约定还原为 Windows CRLF。
+# 这样既避免行尾混杂，也不会在 git diff 里出现整文件重写。
+* text=auto
+
+*.js    text eol=crlf
+*.css   text eol=crlf
+*.html  text eol=crlf
+*.md    text eol=crlf
+*.json  text eol=crlf
+*.yml   text eol=crlf
+*.yaml  text eol=crlf
+
+# 官方许可证原文保持 LF，不改写
+LICENSE text eol=lf
+.gitignore text eol=lf
+.gitattributes text eol=lf
+
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.webp binary
+*.gif  binary
+*.pdf  binary
