@@ -53,9 +53,6 @@
 页面是纯静态的，**没有后端、不连接任何真实仪器**；语言 / 主题偏好与运行历史只保存在浏览器
 `localStorage`，不会上传到服务器。
 
-> 若该地址暂时返回 404，说明维护者还没在仓库 Settings → Pages 启用，步骤见
-> [CONTRIBUTING.md](CONTRIBUTING.md) 的「启用在线演示」。
-
 ### 方式一：直接打开（零安装，本地）
 
 双击 [`index.html`](index.html)。项目不使用 ES modules、构建工具或 CDN，浏览器直接打开即可运行。
