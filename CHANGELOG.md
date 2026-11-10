@@ -45,6 +45,8 @@ Initial open-source release. This is a reference prototype, not a production tes
   user / development / roadmap docs, contributing guide, code of conduct, security policy,
   issue and PR templates, GitHub Actions CI on Node 18/20/22, a zero-dependency static verifier,
   a local dev server and 13 end-to-end smoke checks.
+- **Privacy-safe demo addresses**: all simulated instrument addresses use RFC 5737 documentation
+  ranges (`192.0.2.0/24`) and loopback, with no real LAN addresses or serial numbers.
 
 ### Known limitations
 
@@ -53,5 +55,5 @@ Initial open-source release. This is a reference prototype, not a production tes
 - No DAQ cards, hard real-time HIL, timeouts, retries or reconnect recovery.
 - The planner is deterministic rule parsing, not a large language model.
 
-[Unreleased]: https://github.com/lizhuanshu/testflow-studio/compare/v0.1.0...HEAD
-[0.1.0]: https://github.com/lizhuanshu/testflow-studio/releases/tag/v0.1.0
+[Unreleased]: https://github.com/limingwan31/testflow-studio/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/limingwan31/testflow-studio/releases/tag/v0.1.0

@@ -15,7 +15,7 @@
 ## 本地开发 / Local setup
 
 ```bash
-git clone https://github.com/lizhuanshu/testflow-studio.git
+git clone https://github.com/limingwan31/testflow-studio.git
 cd testflow-studio
 
 node scripts/serve.js          # http://localhost:8080
@@ -92,8 +92,29 @@ npm run verify                 # 一次跑完静态校验与冒烟测试
 ## 提 Issue / Issues
 
 - 缺陷请用「缺陷报告」模板，功能建议用「功能建议」模板。
-- 使用咨询请发 [Discussions](https://github.com/lizhuanshu/testflow-studio/discussions)。
+- 使用咨询请发 [Discussions](https://github.com/limingwan31/testflow-studio/discussions)。
 - **不要粘贴**真实仪器地址、序列号、客户数据或内部网络信息，模板里已内置确认项。
+
+## 首次推送 / First publish（维护者）
+
+仓库必须先是一个**空的** GitHub 仓库（不要勾选 README / LICENSE / .gitignore，本地已备好），
+否则 `main` 会被当成无关历史而拒绝推送。Windows 使用 Git Credential Manager 登录一次即可。
+
+```bash
+git remote add origin https://github.com/limingwan31/testflow-studio.git
+git branch -M main
+git push -u origin main
+git tag -a v0.1.0 -m "v0.1.0"
+git push origin v0.1.0
+```
+
+推送前请再确认三件事：
+
+- `.workbuddy/` 与 `公众号投稿/` 已被 `.gitignore` 排除，用 `git ls-files` 复核。
+- 演示地址使用 RFC 5737 文档网段（`192.0.2.0/24`），不含真实仪器地址、序列号或客户数据。
+- `npm run verify` 全绿（静态校验 + 13 项冒烟测试）。
+
+推送后在仓库设置里补齐描述与 topics、启用 Discussions，并在 tag 上创建 Release。
 
 ## 发布流程 / Releases（维护者）
 

@@ -45,34 +45,36 @@
   };
 
   // 测试台设备清单。状态为「占位」的驱动只登记接口，不会真的执行。
+  // 演示地址统一使用 RFC 5737 文档专用网段 192.0.2.0/24 与环回地址，
+  // 不代表任何真实设备、真实内网或真实序列号；接入真机时由工位 Agent 覆盖。
   var 设备列表 = [
     {
       id: 'psu-01', 名称: '程控电源', 厂商: 'Keysight', 型号: 'E36312A',
-      地址: 'TCPIP0::10.0.0.21::inst0::INSTR', 类别: 'VISA / SCPI', 状态: '在线', 实现: '模拟仪器',
+      地址: 'TCPIP0::192.0.2.21::inst0::INSTR', 类别: 'VISA / SCPI', 状态: '在线', 实现: '模拟仪器',
       能力: ['reset', 'set_current_limit', 'set_voltage', 'output_on', 'output_off', 'query_error'],
       说明: 'CH2 输出，先设保护再上电'
     },
     {
       id: 'scope-01', 名称: '示波器', 厂商: 'Tektronix', 型号: 'MSO68B',
-      地址: 'TCPIP0::10.0.0.22::inst0::INSTR', 类别: 'VISA / SCPI', 状态: '在线', 实现: '模拟仪器',
+      地址: 'TCPIP0::192.0.2.22::inst0::INSTR', 类别: 'VISA / SCPI', 状态: '在线', 实现: '模拟仪器',
       能力: ['set_timebase', 'measure_overshoot'],
       说明: 'CH1 捕获负载瞬态波形'
     },
     {
       id: 'load-01', 名称: '电子负载', 厂商: 'Chroma', 型号: '63004-150-60',
-      地址: 'TCPIP0::10.0.0.23::inst0::INSTR', 类别: 'VISA / SCPI', 状态: '在线', 实现: '模拟仪器',
+      地址: 'TCPIP0::192.0.2.23::inst0::INSTR', 类别: 'VISA / SCPI', 状态: '在线', 实现: '模拟仪器',
       能力: ['set_load_current', 'load_on', 'load_off'],
       说明: '2.5 A 阶跃负载'
     },
     {
       id: 'dmm-01', 名称: '数字万用表', 厂商: 'Keysight', 型号: '34465A',
-      地址: 'USB0::0x2A8D::0x0101::MY5::INSTR', 类别: 'VISA / SCPI', 状态: '在线', 实现: '模拟仪器',
+      地址: 'USB0::0x2A8D::0x0101::MY00000000::INSTR', 类别: 'VISA / SCPI', 状态: '在线', 实现: '模拟仪器',
       能力: ['measure_voltage'],
       说明: '回读输出电压实测值'
     },
     {
       id: 'plc-01', 名称: '产线 PLC 节点', 厂商: '通用', 型号: 'Modbus TCP',
-      地址: '192.168.1.50:502', 类别: '工业协议', 状态: '占位', 实现: '待接入',
+      地址: '192.0.2.50:502', 类别: '工业协议', 状态: '占位', 实现: '待接入',
       能力: ['read_holding_register', 'write_coil'],
       说明: '换上 Modbus/OPC UA 适配器即可驱动真实设备'
     },

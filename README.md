@@ -3,7 +3,7 @@
 > 一句话描述测试 → 结构化工作流 → 驱动仪器执行 → 由实测结果生成可审计报告。
 > 一个零依赖、可直接打开的 AI 原生测试自动化工作台**原型**。
 
-[![CI](https://github.com/lizhuanshu/testflow-studio/actions/workflows/ci.yml/badge.svg)](https://github.com/lizhuanshu/testflow-studio/actions/workflows/ci.yml)
+[![CI](https://github.com/limingwan31/testflow-studio/actions/workflows/ci.yml/badge.svg)](https://github.com/limingwan31/testflow-studio/actions/workflows/ci.yml)
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![Node >= 18](https://img.shields.io/badge/node-%3E%3D18-brightgreen.svg)](https://nodejs.org/)
 [![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
@@ -50,7 +50,7 @@
 ### 方式二：本地静态服务器
 
 ```bash
-git clone https://github.com/lizhuanshu/testflow-studio.git
+git clone https://github.com/limingwan31/testflow-studio.git
 cd testflow-studio
 node scripts/serve.js          # 或 npm run serve
 # 打开 http://localhost:8080

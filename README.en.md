@@ -3,7 +3,7 @@
 > Describe a test in one sentence → get a structured workflow → run it against instruments → generate a report from measured results.
 > A zero-dependency, open-in-browser **prototype** of an AI-native test automation workbench.
 
-[![CI](https://github.com/lizhuanshu/testflow-studio/actions/workflows/ci.yml/badge.svg)](https://github.com/lizhuanshu/testflow-studio/actions/workflows/ci.yml)
+[![CI](https://github.com/limingwan31/testflow-studio/actions/workflows/ci.yml/badge.svg)](https://github.com/limingwan31/testflow-studio/actions/workflows/ci.yml)
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![Node >= 18](https://img.shields.io/badge/node-%3E%3D18-brightgreen.svg)](https://nodejs.org/)
 [![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
@@ -50,7 +50,7 @@ Double-click [`index.html`](index.html). No ES modules, no build step, no CDN �
 ### Option 2: local static server
 
 ```bash
-git clone https://github.com/lizhuanshu/testflow-studio.git
+git clone https://github.com/limingwan31/testflow-studio.git
 cd testflow-studio
 node scripts/serve.js          # or: npm run serve
 # open http://localhost:8080

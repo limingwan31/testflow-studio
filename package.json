@@ -27,10 +27,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lizhuanshu/testflow-studio.git"
+    "url": "git+https://github.com/limingwan31/testflow-studio.git"
   },
   "bugs": {
-    "url": "https://github.com/lizhuanshu/testflow-studio/issues"
+    "url": "https://github.com/limingwan31/testflow-studio/issues"
   },
-  "homepage": "https://github.com/lizhuanshu/testflow-studio#readme"
+  "homepage": "https://github.com/limingwan31/testflow-studio#readme"
 }

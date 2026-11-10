@@ -39,7 +39,7 @@
 ## 举报与处理 / Enforcement
 
 如遇到违反准则的行为，请通过
-[GitHub Security Advisories（私下提交）](https://github.com/lizhuanshu/testflow-studio/security/advisories/new)
+[GitHub Security Advisories（私下提交）](https://github.com/limingwan31/testflow-studio/security/advisories/new)
 或在 Issue 中 `@` 维护者并注明「 conduct 」联系维护团队。请描述发生了什么、涉及哪些内容、
 发生位置，并尽可能附上链接或截图（注意遮去他人隐私信息）。
 

@@ -12,7 +12,7 @@
 ## 报告漏洞 / Reporting a vulnerability
 
 **请不要用公开 Issue 报告安全漏洞。** 请通过
-[GitHub Security Advisories（私下提交）](https://github.com/lizhuanshu/testflow-studio/security/advisories/new)
+[GitHub Security Advisories（私下提交）](https://github.com/limingwan31/testflow-studio/security/advisories/new)
 提交，内容建议包含：
 
 - 受影响的模块与版本；

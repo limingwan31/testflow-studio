@@ -1,8 +1,8 @@
 blank_issues_enabled: false
 contact_links:
   - name: 使用咨询与方案讨论 / Q&A
-    url: https://github.com/lizhuanshu/testflow-studio/discussions
+    url: https://github.com/limingwan31/testflow-studio/discussions
     about: 安装、使用、集成思路与选型讨论请发 Discussions，便于后来者检索。
   - name: 安全漏洞报告 / Security advisory
-    url: https://github.com/lizhuanshu/testflow-studio/security/advisories/new
+    url: https://github.com/limingwan31/testflow-studio/security/advisories/new
     about: 请勿用公开 issue 报告安全问题，流程见 SECURITY.md。

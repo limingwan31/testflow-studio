@@ -2,7 +2,7 @@
 
 > 当前版本 `0.1.0` 是**参考原型**：用来讲清架构、数据契约和安全边界，不是生产级测试执行器。
 > 路线图按「先跑通闭环、再接真机、再做产品化」排序，欢迎在
-> [Discussions](https://github.com/lizhuanshu/testflow-studio/discussions) 里调整优先级。
+> [Discussions](https://github.com/limingwan31/testflow-studio/discussions) 里调整优先级。
 
 ## 已完成 / Shipped (0.1.0)
 
